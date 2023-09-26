@@ -106,50 +106,125 @@ public class ConditionalStatements {
 			System.out.println("F");
 
 		} else if (grade < 0 && grade > 100) {
-		System.out.println("Score out of range");
+			System.out.println("Score out of range");
 
 		}
+
+		/*
+		 * Write a program that accepts an integer between 1 and 7 from the user. Use a
+		 * switch statement to print out the corresponding weekday. Print “Out of range”
+		 * if the number is less than 1 or greater than 7. Do not forget to include
+		 * “break” statements in each of your cases
+		 */
+		Scanner input = new Scanner(System.in);
+		
+
+		System.out.println("Enter a number");
+		int userInput = input.nextInt();
+		if (userInput > 0 && userInput< 8) {
+			switch (userInput) {
+			case 1:
+				System.out.println("Monday");
+				break;
+			case 2:
+				System.out.println("Tuesday");
+				break;
+			case 3:
+				System.out.println("Wednesday");
+				break;
+			case 4:
+				System.out.println("Thursday");
+				break;
+			case 5:
+				System.out.println("Friday");
+				break;
+			case 6:
+				System.out.println("Saturday");
+				break;
+			case 7:
+				System.out.println("Sunday");
+				break;
+			
+		}} else {
+			System.out.println("Out of range");
+		}
+		
+
 	
 
-	/*
-	 * Write a program that accepts an integer between 1 and 7 from the user. Use a
-	 * switch statement to print out the corresponding weekday. Print “Out of range”
-	 * if the number is less than 1 or greater than 7. Do not forget to include
-	 * “break” statements in each of your cases
-	 */
-	Scanner input= new Scanner(System.in);
-	int userInput= 0;
-	
-	System.out.println("Enter a number");
-	
-	if(input.nextInt()>0 && input.nextInt()<8) {
-		 userInput= input.nextInt();
-	} else {
-		System.out.println("Out of range");
-	}
-	switch(userInput) {
-	case 1:
-		System.out.println("Monday");
-	break;
-	
-	case 2:
-		System.out.println("Tuesday");
-		break;
-	case 3:
-		System.out.println("Wednesday");
-		break;
-	case 4:
-		System.out.println("Thursday");
-		break;
-	case 5:
-		System.out.println("Friday");
-		break;
-	case 6:
-		System.out.println("Saturday");
-		break;
-	case 7: System.out.println("Sunday");
-		break;
-
+		/*
+		 * Create a program that lets the users input their filing status and income.
+		 * Display how much tax the user would have to pay according to status and
+		 * income
+		 */
+		
+		Scanner taxInput= new Scanner(System.in);
+		System.out.println("Choose the option which describes your filing status: single, Married Filing Jointly, Married Filing Separately, and Head of Household");
+		String option= taxInput.nextLine();
+		System.out.println("Enter your taxable income");
+		int income= taxInput.nextInt();
+		
+		
+		if(option.equalsIgnoreCase("single")) {
+			if(income>=0 && income<=8350){
+				System.out.println("Your marginal tax rate is 10%");
+			}else if(income>=8351 && income<=33950) {
+				System.out.println("Your marginal tax rate is 15%");
+			}else if(income>=33951 && income<=82250) {
+				System.out.println("Your marginal tax rate is 25%");
+			}else if(income>=82251 && income<=171550) {
+				System.out.println("Your marginal tax rate is 28%");
+			}else if(income>=171551 && income<=372950) {
+					System.out.println("Your marginal tax rate is 33%");
+			}else  {
+						System.out.println("Your marginal tax rate is 35%");
+	}}
+		
+			if(option.equalsIgnoreCase("married filing jointly")) {
+				if(income>=0 && income<=16700){
+					System.out.println("Your marginal tax rate is 10%");
+				}else if(income>=16701 && income<=67900) {
+					System.out.println("Your marginal tax rate is 15%");
+				}else if(income>=67901 && income<=137050) {
+					System.out.println("Your marginal tax rate is 25%");
+				}else if(income>=137051 && income<=208850) {
+					System.out.println("Your marginal tax rate is 28%");
+				}else if(income>=208851 && income<=372950) {
+						System.out.println("Your marginal tax rate is 33%");
+				}else  {
+							System.out.println("Your marginal tax rate is 35%");
+		}
 }
+			if(option.equalsIgnoreCase("married filing separately")) {
+				if(income>=0 && income<=83500){
+					System.out.println("Your marginal tax rate is 10%");
+				}else if(income>=8351 && income<=33950) {
+					System.out.println("Your marginal tax rate is 15%");
+				}else if(income>=33951 && income<=68525) {
+					System.out.println("Your marginal tax rate is 25%");
+				}else if(income>=68526 && income<=104425) {
+					System.out.println("Your marginal tax rate is 28%");
+				}else if(income>=104426 && income<=186475) {
+						System.out.println("Your marginal tax rate is 33%");
+				}else  {
+							System.out.println("Your marginal tax rate is 35%");
+		}
+}
+			if(option.equalsIgnoreCase("head of household")) {
+				if(income>=0 && income<=11950){
+					System.out.println("Your marginal tax rate is 10%");
+				}else if(income>=11951 && income<=45500) {
+					System.out.println("Your marginal tax rate is 15%");
+				}else if(income>=45501 && income<=117450) {
+					System.out.println("Your marginal tax rate is 25%");
+				}else if(income>=117451 && income<=190200) {
+					System.out.println("Your marginal tax rate is 28%");
+				}else if(income>=190201 && income<=372950) {
+						System.out.println("Your marginal tax rate is 33%");
+				}else  {
+							System.out.println("Your marginal tax rate is 35%");
+		}
+}
+
 }
 }
