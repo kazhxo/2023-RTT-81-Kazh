@@ -25,7 +25,6 @@ public class loops {
 		int a=scan.nextInt();
 		System.out.println("Enter another positive integer ");
 		int b=scan.nextInt();
-
 		
 		if(a>b) {
 			for(int i=0; i<=b;i++) {
@@ -33,12 +32,18 @@ public class loops {
 					System.out.println("The GCD is " + i);
 					break;
 				}
+			}}else if(b>a) {
+					for(int i=0; i<=a;i++) {
+						if(a%i==0 && b%i==0) {
+							System.out.println("The GCD is " + i);
+							
+				
 			}
 		}
 		System.out.println();
 		
 		
 		
+			}
 	}
-
 }
