@@ -22,28 +22,26 @@ public class loops {
 		
 		Scanner scan= new Scanner(System.in);
 		System.out.println("Enter a positive integer ");
-		int a=scan.nextInt();
+		int n1=scan.nextInt();
 		System.out.println("Enter another positive integer ");
-		int b=scan.nextInt();
+		int n2=scan.nextInt();
 		
-		if(a>b) {
-			for(int i=0; i<=b;i++) {
-				if(a%i==0 && b%i==0) {
-					System.out.println("The GCD is " + i);
-					break;
-				}
-			}}else if(b>a) {
-					for(int i=0; i<=a;i++) {
-						if(a%i==0 && b%i==0) {
-							System.out.println("The GCD is " + i);
-							
+		if(n1>n2) {
+	
+		for(int i=1; i>n1; i++) {
+			if(n1%i==0 && n2%i==0) {
+				System.out.println("GCD is " + i);
 				
+			}}}else {
+				for(int i=1; i>n2; i++) {
+					if(n1%i==0 && n2%i==0) {
+						
 			}
-		}
-		System.out.println();
-		
-		
-		
+					System.out.println("GCD is " + i);
+				}
 			}
 	}
+
+		
+
 }
