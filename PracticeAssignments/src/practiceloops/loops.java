@@ -40,6 +40,9 @@ public class loops {
 					System.out.println("GCD is " + i);
 				}
 			}
+		
+		
+		
 	}
 
 		
