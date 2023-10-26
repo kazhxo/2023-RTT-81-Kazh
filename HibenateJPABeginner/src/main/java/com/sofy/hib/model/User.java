@@ -1,59 +1,53 @@
-package com.kazhan.hibernateuser.model;
+package com.sofy.hib.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-//THIS IS A POJO/MODEL CLASS, NEEDS COSNTRUCTOR
-//import from jakarta
-//all annotations above a field refer to that field
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/*
+ * POJO (Plain Old Java Object)
+class with some class variables, getter and 
+setter methods, and its constructors.
+ */
+
+//@Entity annotation specifies that the class is an entity
 @Entity
-@Table(name="users")
+
+//@Table maps the entity with the table. 
+//If no @Table is defined, the default value is used: the class name of the entity
+@Table(name="USER")
 public class User {
 	
-	//instance variables, for id use object class
+	//● @Column maps the entity's/class field to the table's column. If @Column is omitted,
+	//the default value is used: the field name of the entity.
+	@Column(name="USER_ID")
 	
-	
-	//START NOTE
-	//column name for id will be "user_id"
-	@Column(name="user_id")
-	//@Id= primary key 
+	//● @Id declares the identifier property of the entity.
+
 	@Id
-	//IDENTITY automatically assigns primary key
+	//autoincrement primary key 
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id;
-	//END NOTE
-	
-	
 	private String fullname;
 	private String email;
 	private String password;
 	private int age;
-	private double salary; 
-	private String city; 
-	
-	//empty constructor
-	
-	public User(){
-		this.age=0;
-		this.fullname="";
-		this.email="";
-		this.password="";
-		this.salary=0.0;
-		this.city="";
-		
-	}
+	private double salary;
+	private String city;
 
 	public User(String fullname, String email, String password, int age, double salary, String city) {
-		super();
 		this.fullname = fullname;
 		this.email = email;
 		this.password = password;
 		this.age = age;
 		this.salary = salary;
 		this.city = city;
+	}
+
+	public User() {
 	}
 
 	public Integer getId() {
@@ -78,7 +72,10 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+
 	}
+
+
 
 	public String getPassword() {
 		return password;
@@ -111,14 +108,4 @@ public class User {
 	public void setCity(String city) {
 		this.city = city;
 	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", fullname=" + fullname + ", email=" + email + ", password=" + password + ", age="
-				+ age + ", salary=" + salary + ", city=" + city + "]";
-	}
-	
-	
-	
-
 }
