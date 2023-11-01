@@ -1,6 +1,7 @@
-package com.kazhan.hibernateuser;
+package com.kazhan.hibernate;
 
 import com.kazhan.hibernateuser.model.User;
+import com.sofy.hibernateuser.controller.HibernateQueryLang;
 import com.sofy.hibernateuser.controller.UserService;
 
 /**
@@ -11,12 +12,17 @@ public class App
 {
     public static void main( String[] args )
     {
-        UserService obj= new UserService();
-        //obj.findUser(4);
+       
         
-        //obj.updateUser(3);
-        
-        obj.deleteUser(3);
+   
+    
+    //obj.useMultiSelectExpressionClause();
+    
+   // obj.useGroupByClause();
+    
+    
+    User obj= new User();
+    obj.updateUser();
         
     }
 }

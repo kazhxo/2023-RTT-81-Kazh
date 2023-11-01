@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.hibernate.util","c":"HibernateUtil","l":"getConnection()"},{"p":"com.hibernate.util","c":"HibernateUtil","l":"HibernateUtil()","u":"%3Cinit%3E()"}];updateSearchResults();

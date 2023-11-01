@@ -1,14 +1,30 @@
 package com.kazhan.hibernateuser.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.lang.invoke.ClassSpecializer.Factory;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.TypedQuery;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.hibernate.util.HibernateUtil;
+
 //THIS IS A POJO/MODEL CLASS, NEEDS COSNTRUCTOR
 //import from jakarta
 //all annotations above a field refer to that field
+
+
+@NamedQueries({
+	@NamedQuery(name= "myUpdateuser", query= "UPDATE User SET fullName= :fullname WHERE id = :id")
+})
 @Entity
 @Table(name="users")
 public class User {
@@ -54,6 +70,24 @@ public class User {
 		this.age = age;
 		this.salary = salary;
 		this.city = city;
+	}
+	
+	public void updateUser() {
+		Session session= HibernateUtil.getConnection();
+		Transaction t= session.beginTransaction();
+		
+		TypedQuery<?> query= session.getNamedQuery("updateMyUser");
+		
+		query.setParameter("fullname", "Kazhan Sofy");
+		query.setParameter("id", 2);
+		
+		int rowsAffected= query.executeUpdate();
+		
+		System.out.println(rowsAffected + " rows were affected");
+		
+		t.commit();
+		System.out.println("Successfully updated user");
+		
 	}
 
 	public Integer getId() {
