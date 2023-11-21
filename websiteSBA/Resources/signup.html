@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>creating mailing system</title>
+	<style>
+		
+		ul {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					overflow: hidden;
+					background-color: white;
+					width: fit-content;
+					height: fit-content;
+				}
+
+				li {
+					float: left;
+
+				}
+
+				li a {
+					display: block;
+					color: black;
+					padding: 14px 16px;
+					background-color: papayawhip;
+					width: max-content;
+
+				}
+
+
+				li {
+					border-right: 1px solid cadetblue;
+				}
+
+				li:last-child {
+					border-right: none;
+				}
+
+				li a:hover {
+					background-color: burlywood;
+				}
+
+				:active {
+					background-color: burlywood;
+				}
+
+				.header {
+
+
+					padding: 70x;
+					text-align: center;
+					background: rosybrown;
+					color: white;
+				}
+
+				ul {
+					border: 1px solid #e7e7e7;
+					background-color: #f3f3f3;
+				}
+
+				li a {
+					color: #666;
+				}
+
+		legend {
+			display: block;
+			padding-left: 2px;
+			padding-right: 2px;
+			border: none;
+		}
+
+		body {
+			background-color: lightsalmon;
+		}
+	</style>
+	<script type="text/javascript">
+		function validate() {
+
+			var user = document.getElementById("e").value;
+			var user2 = document.getElementById("e");
+			var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if (re.test(user)) {
+				alert("done");
+				return true;
+			}
+			else {
+				user2.style.border = "red solid 3px";
+				return false;
+			}
+		} 
+	</script>
+</head>
+
+<body bgcolor="cyan">
+
+
+	<ul>
+		<li><a href="page.html">Home</a></li>
+		<li><a href="page2.html">Protein Powder</a></li>
+		<li><a href="page3.html">Vitamins</a></li>
+		<li style="float:right"><a class="active" href="#about">About</a></li>
+	</ul>
+
+	<center>
+		<h1>Ready to shop?</h1>
+		<form>
+			<fieldset style="width:300px">
+				<legend>Sign up</legend>
+				<table>
+					<tr>
+						<input type="text" placeholder="firstname" maxlength="15">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="text" placeholder="lastname" maxlength="15">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="email" placeholder="username@gmail.com" id="e">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="password" placeholder="password">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="password" placeholder="confirm">
+					</tr>
+					<br><br>
+
+					<tr>
+						<label>Gender:</label>
+						<select id="gender">
+							<option value="male">male</option>
+							<option value="female">female</option>
+							<option value="others">others</option>
+						</select>
+					</tr>
+					<br><br>
+					<tr><input type="submit" onclick="validate()" value="create">
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+	</center>
+</body>
+
+</html>
